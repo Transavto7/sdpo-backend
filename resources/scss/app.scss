@@ -1,0 +1,166 @@
+@import "remixicon/fonts/remixicon.css";
+
+body {
+    background: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input {
+        background-color: #D3DAE3;
+        border: none;
+        border-radius: 20px;
+        padding: 25px 50px;
+        font-size: 22px;
+        text-align: center;
+        outline: none;
+        transition: ease-in-out 0.2s;
+
+        &:focus {
+            background-color: #becfe5;
+        }
+    }
+}
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background-color: #244673;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    min-width: 100px;
+    transition: ease-in-out 0.2s;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.icon {
+        min-width: auto;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    &.danger {
+        background-color: #C53936;
+    }
+
+    &.success {
+        background-color: #219313;
+    }
+}
+
+.title {
+    color: #244673;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 50px;
+}
+
+.versions {
+    padding: 50px;
+
+    &__list {
+        margin-top: 20px;
+    }
+
+    &.create {
+        text-align: center;
+    }
+
+    .create {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input {
+        background-color: #D3DAE3;
+        border: none;
+        border-radius: 20px;
+        padding: 20px 30px;
+        font-size: 22px;
+        text-align: center;
+        outline: none;
+        transition: ease-in-out 0.2s;
+        width: 100%;
+        font-weight: normal;
+
+        &:focus {
+            background-color: #becfe5;
+        }
+    }
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        white-space: nowrap;
+        gap: 10px;
+        font-weight: normal;
+    }
+}
+
+table {
+    font-family: 'Montserrat', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: 500;
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table tr.active {
+    background-color: rgba(#219313, 0.3);
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #244673;
+    color: white;
+}
