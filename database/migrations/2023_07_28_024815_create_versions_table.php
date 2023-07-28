@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('versions', function (Blueprint $table) {
             $table->id();
             $table->string("name")->unique();
-            $table->text('hash')->unique();
+            $table->string('hash')->unique();
             $table->string('path');
             $table->boolean('is_main')->default(false);
             $table->timestamps();
