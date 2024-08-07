@@ -39,9 +39,10 @@ class VersionController extends Controller
        if (!$request->files->has('file')) {
            return back()->withErrors(['message' => 'Выберите файл']);
        }
-
+//dd(php_ini_loaded_file(), ini_get('upload_tmp_dir'), $request->files->get('file')->getRealPath());
        $name = $request->name . '.' . $request->files->get('file')->getClientOriginalExtension();
-       Storage::putFileAs('versions', $request->files->get('file'), $name);
+       $path = Storage::putFileAs('versions', $request->files->get('file'), $name);
+//dd(ini_get('post_max_size'), $request->files->get('file'));
        $path = 'versions/' . $name;
        $hash = hash_file('md5', $request->files->get('file'));
 
@@ -56,7 +57,7 @@ class VersionController extends Controller
            'name' => $request->name,
            'path' => $path,
            'hash' => $hash,
-           'is_main' => $request->is_main
+           'is_main' => $request->is_main ? true : false
        ]);
 
        return redirect(route('versions.index'));
